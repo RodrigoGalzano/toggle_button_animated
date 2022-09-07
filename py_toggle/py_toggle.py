@@ -52,6 +52,11 @@ class PyToggle(QCheckBox):
 
         # print(f"Stats: {self.isChecked()}")
 
+    def set_value(self, width, tipo_animacao : QEasingCurve):
+        self.width = width
+        self.animation.setEasingCurve(tipo_animacao)
+        self.repaint()
+
     # SET NEW HIT AREA
     def hitButton(self, pos: QPoint):
         return self.contentsRect().contains(pos)
